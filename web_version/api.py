@@ -10,6 +10,51 @@ import pygal
 from pygal import Config
 import os
 
+#data modules
+
+from io import StringIO
+import pandas as pd
+import numpy as np
+
+
+### DATA START ###
+
+def getdata(data):
+##    with open("file.txt", "rb") as text:
+##        data = text.read().decode("UTF-8")
+
+    TESTDATA = StringIO(data)
+
+    df = pd.read_csv(TESTDATA, sep="\t")
+
+    colname = df.columns[0]
+
+    df = df.set_index(colname)
+
+##    df = df.fillna()
+
+    for index, oldrow in df.iterrows():
+        row = oldrow.tolist()
+        #numpy replace nan for 0
+        row = np.nan_to_num(row) 
+        row_total = sum(row)
+        print(row_total)
+        newrow = []
+        for i in row:
+            newi = i/row_total*100
+            newrow.append(newi)
+        df.loc[index] = newrow
+        print(newrow)
+    return(df)
+
+### DATA END ###
+
+
+
+
+
+
+
 #chart ---------------------------------------------------------------------------------------------------------------------------------
 
 #setting up a new configuration
@@ -63,10 +108,15 @@ else:
 #website -----------------------------------------------------------------------------------------------------------------------------
 
 def getChart(config, data):
-    return charts.Chart(chartconfig, data).render
+    df = getdata(data)
+    newdata = []
+    for index, row in df.iterrows():
+        newdata.append([index, row])
+    
+    return charts.Chart(chartconfig, newdata).render
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 
 @app.route('/', methods=['GET'])
 def home():
@@ -74,9 +124,12 @@ def home():
         website = file.read()
     return website
 
-@app.route('/api', methods=["GET","POST"])
+@app.route('/api', methods=["POST"])
 def api_id():
-    data = json.loads(request.data)
-    return getChart(chartconfig, data)
+    #data = json.loads(request.data)
+    data = request.data.decode('utf-8')
+    resp = flask.Response(getChart(chartconfig, data))
+    resp.headers["Content-type"] = 'text/xml'
+    return resp
 
 app.run()
