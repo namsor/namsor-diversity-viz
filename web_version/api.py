@@ -68,7 +68,16 @@ NamsorStyle = Style(
   opacity='1.0',
   opacity_hover='.95',
   transition='200ms ease-in',
-  colors=('#7CBBCF', '#9B89B3', '#AEC683', '#CA7E7D', '#7E9BC8', '#E78C41'))
+  colors=('#4472c4', '#ed7d31', '#a5a5a5', '#ffc000', '#5b9bd5', '#70ad47',
+          '#264478', '#9e480e', '#636363', '#997300', '#255e91', '#4b6e34',
+          '#698ed0', '#f1975a', '#f1975a', '#ffcd33', '#7cafdd', '#8cc168',
+          '#335aa1', '#d26012', '#848484', '#cc9a00', '#327dc2', '#5a8a39',
+          '#8faadc', '#f4b183', '#c9c9c9', '#ffd966', '#ffd966', '#a9d18e',
+          '#203864', '#843c0c', '#525252', '#7f6000', '#1f4e79', '#385723',
+          '#7c9cd6', '#f2a46f', '#f2a46f', '#ffd34d', '#8cb9e2', '#9ac97b',
+          '#2c4f8c', '#2c4f8c', '#747474', '#b38600', '#b38600', '#4e7932',
+          '#a2b9e2', '#f6be98', '#d2d2d2', '#ffdf7f', '#adcdea', '#b7d8a1'
+          ))
 
 #setting up default values
 
