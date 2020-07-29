@@ -77,40 +77,16 @@ chartconfig.fill=True
 chartconfig.style=NamsorStyle
 chartconfig.show_dots=False
 chartconfig.range=(0, 100)
-
-
-#loading additional config
-
-confpath = "config.json"
-if os.path.exists(confpath):
-    with open(confpath, "r") as file:
-        content = file.read()
-        config = json.loads(content)
-    print(config)
-
-    if "show_y_labels" in config.keys():
-        if config["show_y_labels"] == "True":
-            chartconfig.show_y_labels = True
-        elif config["show_y_labels"] == "False":
-            chartconfig.show_y_labels = False
-        else:
-            print("No valid config value (Boolean) for setting: show_dots\nDefault values will be used.")
-    if "show_dots" in config.keys():
-        if config["show_dots"] == "True":
-            chartconfig.show_dots = True
-        elif config["show_dots"] == "False":
-            chartconfig.show_dots = False
-        else:
-            print("No valid config value (Boolean) for setting: show_dots\nDefault values will be used.")
-else:
-    print("No configuration file, using default values... : "+confpath)
+chartconfig.show_dots = False
+chartconfig.show_y_labels = False
+chartconfig.width = 5000
 
 #website -----------------------------------------------------------------------------------------------------------------------------
 
 def getChart(config, data):
     df = getdata(data)
     newdata = []
-    for index, row in df.iterrows():
+    for index, row in df.iteritems():
         newdata.append([index, row])
     
     return charts.Chart(chartconfig, newdata).render
