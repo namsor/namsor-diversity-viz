@@ -1,6 +1,6 @@
 # NamSor Bio-Cultural Diversity visualization
 
-The onomastic mille-feuille is a simple visualization for tabular data, where different colors reprensent different NamSor classes (ex. gender, US'race'/ethnicity, origin/country/diaspora ... or a combination of those) stacked in ordinate.
+The onomastic mille-feuille is a simple visualization for tabular data, where different colors represent different NamSor classes (ex. gender, US'race'/ethnicity, origin/country/diaspora ... or a combination of those) stacked in ordinate.
 In abscissa, any grouping can be chosen : it could be geographic (country or region ...), or other features such as a job type, an interest, a language.
 
 All NamSor artworks are released as Creative Commons CC-BY-4.0
