@@ -7,7 +7,13 @@ In abscissa, any grouping can be chosen : it could be geographic (country or reg
 All NamSor artworks are released as Creative Commons CC-BY-4.0
 https://creativecommons.org/licenses/by/4.0/
 
-## Chinese Sea, Elian Carsenat, 08-2020
+## 'Origin', Elian Carsenat, 07-2020
+'Origin' is a back-testing of NamSor Origin API v2.0.10 on Wikidata names (20200513_WW_WikiData.sql and 20200526_WikiData_NamSorV2010_BackTest_vF.xlsx/fnln_origin_confusion).
+It reflects how correlation between personal names and a particular country of origin (as recognized by Origin API v2.0.10). The onomastic mille-feuille was post-processed with Inkscape to add a mirror effect. 
+
+![Origin, Elian Carsenat, 07-2020](artwork/072929_Origin/20200807_Millefeuilles_Origin_Wikidata_v2010_post_A0_150DPI.png?raw=true "Origin")
+
+## 'Chinese sea', Elian Carsenat, 08-2020
 'Chinese sea' is a colorful view of the cartography of COVID-19 Scientific Literature, from the angle of nationality / country of origin or ethnicity of scientists across 30 different subject clusters.
 ![Chinese sea, Elian Carsenat, 08-2020](artwork/082020_ChineseSea/20200806_Millefeuilles_A0v001_170DPI.png?raw=true "Chinese sea")
 
